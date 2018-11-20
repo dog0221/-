@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/大话西游.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="header-inner">
+				<a href="" class="logo"><img src="img/200.jpg" /></a>
+				<div class="nav">
+					<a href="">官网首页</a>
+					<a href="">游戏特色</a>
+					<a href="">下载专区</a>
+					<a href="">游戏查询</a>
+					<a href="">大话文化</a>
+					<a href="">客户服务</a>
+					<a href="">游戏论坛</a>
+				</div>
+				<div class="wx-box">
+					<a href="" class="btn-icon btn-icon-01"><i></i>微信公众号</a>
+					<a href="" class="btn-icon btn-icon-02"><i></i>网易大神</a>
+				</div>
+				<div class="search-box">
+					<form action="">
+						<input type="text" name="" id="" placeholder="搜索大话2" />
+						<a href="" class="btn-search"></a>
+					</form>
+				</div>
+			</div>
+		</header>
+		<!--banner-->
+		<div class="banner-box">
+			<div class="slide-wrap">
+				<a href="" class="banner1"></a>
+				<a href="" class="banner2"></a>
+			</div>
+		</div>
+		<!--part1-->
+		<div class="wrap">
+			<div class="part-01-inner">
+				<!--左-->
+				<div class="part-01-left">
+					<!--下载-->
+					<div class="down-load-box">
+						<a href="" class="icon icon1"></a>
+						<a href="" class="icon icon2"></a>
+						<div class="guild-box icon">
+							<a href="">账号注册</a>
+							<a href="">账号重置</a>
+							<a href="">新手指南</a>
+							<a href="">回归指引</a>
+						</div>
+					</div>
+					<!--左侧小导航-->
+					<ul class="entrance-box">
+						<li class="ge" style="padding: 0;height: 67px;"><img src="img/cbg_01_c77a2ed.webp.jpg" /></li>
+						<li>
+							<i class="icon icon3"></i> 福利中心
+						</li>
+						<li>
+							<i class="icon icon3 icon4"></i> 资料查询
+						</li>
+						<li>
+							<i class="icon icon3 icon5"></i> 产&nbsp; 品&nbsp; 站
+						</li>
+					</ul>
+					<h4 class="xiaobian-title"><i class="icon icon6"></i>小编推荐</h4>
+					<a href="" class="hundred"><img src="img/cbed9d95-e35a-43d7-9ed1-5c2be2e10b70.jpg" /></a>
+					<ul class="huabao-list">
+						<li>
+							<a href="">【画报】五百元买了把一阶</a>
+						</li>
+						<li>
+							<a href="">【画报】顶完吉人再顶神出</a>
+						</li>
+						<li>
+							<a href="">【画报】是老版神兽就好了</a>
+						</li>
+						<li>
+							<a href="">【画报】凌烟阁再出终极年</a>
+						</li>
+					</ul>
+				</div>
+				<!--中-->
+				<div class="part-01-middle">
+					<div class="btns-box">
+						<a href="">
+							<i class="icon icon7 icon11"></i>
+							<em></em> 大闹天宫
+						</a>
+						<a href="">
+							<i class="icon icon7 icon8 icon11"></i>
+							<em></em> 华丽乾坤
+						</a>
+						<a href="">
+							<i class="icon icon7 icon9 icon11"></i>
+							<em></em> 跨服帮战
+						</a>
+
+					</div>
+					<div id="slide-box">
+						<ul id="slide-wrap">
+							<li>
+								<a href=""><img src="img/5b763b34a7f252040093a7e7VLjCkRrm.png" /></a>
+							</li>
+							<li>
+								<a href=""><img src="img/5bd16b846f04947438400ebbgHyL4yDL.png" /></a>
+							</li>
+							<li>
+								<a href=""><img src="img/5b763b34a7f252040093a7e7VLjCkRrm.png" /></a>
+							</li>
+							<li>
+								<a href=""><img src="img/5bdae9858b74273b9b2b3b1c6oXJQE0a.png" /></a>
+							</li>
+							<li>
+								<a href=""><img src="img/5bd16b846f04947438400ebbgHyL4yDL" /></a>
+							</li>
+						</ul>
+						<ol id="list">
+							<li>把酒言欢新服开启</li>
+							<li>入驻大神福利不断</li>
+							<li>挑战大神用去豪礼</li>
+							<li>2018开发组面对面</li>
+							<li>重出江湖好礼不断</li>
+						</ol>
+					</div>
+					<script type="text/javascript">
+						var oDiv = document.getElementById('slide-box');
+						var oPic = document.getElementById('slide-wrap');
+						var oList = document.getElementById('list').getElementsByTagName('li');
+						var index = 0
+						var timer
+
+						function changeimg(curindex) {
+							// curindex=index
+							for(i = 0; i < oList.length; i++) {
+								oList[i].className = ''
+							}
+							oList[curindex].className = 'slide-active'
+							oPic.style.marginLeft = -545 * curindex + 'px'
+						}
+
+						function autoplay() {
+							index++
+							if(index >= oList.length) {
+								index = 0
+							}
+							changeimg(index)
+						}
+
+						timer = setInterval(autoplay, 2000)
+
+						for(i = 0; i < oList.length; i++) {
+							oList[i].index = i
+							oList[i].onmouseover = function() {
+								clearInterval(timer)
+								changeimg(this.index)
+							}
+						}
+
+						oDiv.onmouseover = function() {
+							clearInterval(timer)
+						}
+						oDiv.onmouseout = function() {
+							timer = setInterval(autoplay, 2000)
+						}
+					</script>
+					<div id="news-box">
+						<ul class="news-nav" id="news-nav">
+							<li>最新</li>
+							<li>新闻</li>
+							<li>维护</li>
+							<li>活动</li>
+							<li>专题</li>
+						</ul>
+						<a class="topnews " href="">
+							<em>大话西游2入驻网易大神 双重福利大派送！</em>
+							<span>大话2经典版正式接入网易大神！即日起，在网易大神APP内进行绑定角色、启动口袋版、签到、分享等互动，即可获得海量游戏内礼包福利！同时，在网易大神参与官方账号@大话西游2经典版发起的活动，即有机会获得至尊包公仔、大话2屏风摆件等精美周边！</span>
+						</a>
+						<div class="slide-wrapper" id="slide-wrapper">
+							<div class="slide-item" style="display: block;">
+								<ul class="txt-list">
+									<li class="boss">
+										<a href="">
+											<span class="column">网易CEO丁磊  . </span> 网易大神抽100台iPhone
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<span class="column">[公告]</span> 2018年11月19日维护预览
+											<span class="time">[11-19]</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="slide-item">
+								<ul class="txt-list">
+									<li>2</li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="slide-item">
+								<ul class="txt-list">
+									<li>3</li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="slide-item">
+								<ul class="txt-list">
+									<li>4</li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="slide-item">
+								<ul class="txt-list">
+									<li>5</li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						$("#news-nav li").hover(function() {
+							$("#slide-wrapper .slide-item").hide().siblings().eq($(this).index()).show()
+							console.log($("#slide-wrapper .slide-item").size())
+							$("#news-nav li").removeClass().siblings().eq($(this).index()).addClass("move")
+						})
+					</script>
+				</div>
+				<!--<script type="text/javascript">
+					var obox = document.getElementById('slide-wrapper');
+					var oipt = document.getElementById("news-nav").getElementsByTagName("li")
+					var odiv = obox.getElementsByTagName('div');
+					for(var i = 0; i < oipt.length; i++) {
+						oipt[i].index = i;
+						oipt[i].onclick = function() {
+							for(var i = 0; i < oipt.length; i++) {
+								oipt[i].className = ''
+								odiv[i].style.display = 'none'
+							}
+							this.className = 'active'
+							odiv[this.index].style.display = 'block'
+						}
+					}
+				</script>-->
+				<!--右-->
+				<div class="part-01-right">
+					<div class="player">
+						<div class="player-nav" id="player-nav">
+							<a href="">推荐</a>
+							<a href="">回顾</a>
+							<a href="">无差别PK</a>
+							<a href="">口袋版</a>
+							<a href="">玩家</a>
+						</div>
+						<div class="player-wrap">
+							<ul class="txt-list txt-list1" style="display: block;" id="txt-list">
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="column">[牛人逸事]</span> 十万元赞助！全服第一人气大帮线下聚会
+										<span class="time time1">[11-19]</span>
+										<i class="hot"></i>
+									</a>
+								</li>
+							</ul>
+							<ul class="txt-list txt-list1">2</ul>
+							<ul class="txt-list txt-list1">3</ul>
+							<ul class="txt-list txt-list1">4</ul>
+							<ul class="txt-list txt-list1">5</ul>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$("#player-nav a").hover(function() {
+						$(".txt-list").hide().siblings().eq($(this).index()).show()
+						console.log($("#slide-wrapper .slide-item").size())
+						$("#player-nav a").removeClass().siblings().eq($(this).index()).addClass("move1")
+					})
+				</script>
+			</div>
+		</div>
+	</body>
+
+</html>
